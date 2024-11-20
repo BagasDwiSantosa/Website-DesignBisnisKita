@@ -1,0 +1,814 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Design Bisnis Kita</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/templatemo-onix-digital.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/animated.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/css/owl.css')}}">
+
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+		<!-- Chatbot Icon dan Container -->
+    <div class="chatbot-icon" onclick="toggleChat()">
+      <img src="{{url_for('static', filename='assets/images/kitabot.png')}}" alt="Chatbot Icon" />
+    </div>
+  
+
+		<div class="chat-container">
+      <div class="chat-header">
+        <span class="chat-title">
+            <span style="color: #ff695f; font-weight: bold; margin: 0; padding: 0;">Ki</span><span style="color: blue; font-weight: bold;margin: 0; padding: 0;">ta</span><span style="color: black; font-weight: bold;margin: 0; padding: 0;">Bot</span>
+        </span>
+        <i class="bx bx-x" onclick="toggleChat()"></i>
+      </div>
+    
+			<div class="chat-messages">
+				<div class="message bot-message">
+					Halo! Saya adalah KitaBot asisten virtual untuk membantu Anda dengan pertanyaan seputar DesignBisnisKita. Apa yang ingin Anda tanyakan?
+				</div>
+			</div>
+			<div class="chat-input">
+				<input type="text" placeholder="Ketik pesan..." id="messageInput" onkeypress="handleKeyPress(event)">
+				<button onclick="sendMessage()">
+					<i class="bx bx-send"></i>
+				</button>
+			</div>
+		</div>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="#" class="logo">
+              <img src="{{url_for('static', filename='assets/images/logo-designbisniskita.png')}}">
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
+              <li class="scroll-to-section"><a href="#services">Services</a></li>
+              <li class="scroll-to-section"><a href="#about">About</a></li>
+              <li class="scroll-to-section"><a href="#portfolio">Portfolio</a></li>
+              <li class="scroll-to-section"><a href="#pricing">Price</a></li> 
+              <li class="scroll-to-section"><div class="main-red-button-hover"><a href="#subscribe">Get Recommendations</a></div></li> 
+            </ul>        
+            <a class='menu-trigger'>
+                <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="main-banner" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="owl-carousel owl-banner">
+                <div class="item header-text">
+                  <h6>Welcome to Design Bisnis Kita</h6>
+                  <h2>Level up <em>your Social Media</em> with visuals that <span>Engage and Convert</span>!</h2>
+                  <p>Tingkatkan kehadiran online brand Anda dengan desain menarik yang memikat dan mendorong interaksi dari audiens Anda.</p>
+                  <div class="down-buttons">
+                    <div class="main-blue-button-hover">
+                      <a href="https://wa.me/083829563049">Message Us Now</a>
+                    </div>
+                    <div class="call-button">
+                      <a href="https://wa.me/083829563049"><i class="fa fa-phone"></i> +62-8122-5471-094</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item header-text">
+                  <h6>Social Media Design</h6>
+                  <h2>Professional <em>Designs, Perfect</em> for <span>UMKM</span></h2>
+                  <p>Tampilkan identitas unik brand Anda dengan desain yang dibuat khusus untuk UMKM, membantu Anda terhubung dengan pelanggan dan membangun kepercayaan.</p>
+                  <div class="down-buttons">
+                    <div class="main-blue-button-hover">
+                      <a href="#services">Our Services</a>
+                    </div>
+                    <div class="call-button">
+                      <a href="https://wa.me/083829563049"><i class="fa fa-phone"></i> +62-8122-5471-094</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="item header-text">
+                  <h6>Affordable Packages</h6>
+                  <h2>Choose <em>a Package</em> that fits your <span>Business needs.</span></h2>
+                  <p>Pilih dari berbagai pilihan harga yang dirancang untuk menyesuaikan anggaran dan tujuan bisnis Anda.</p>
+                  <div class="down-buttons">
+                    <div class="main-blue-button-hover">
+                      <a href="#portofolio">Packages</a>
+                    </div>
+                    <div class="call-button">
+                      <a href="https://wa.me/083829563049"><i class="fa fa-phone"></i> +62-8122-5471-094</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="services" class="our-services section">
+    <div class="services-right-dec">
+      <img src="{{url_for('static', filename='assets/images/services-right-dec.png')}}" alt="">
+    </div>
+    <div class="container">
+      <div class="services-left-dec">
+        <img src="{{url_for('static', filename='assets/images/services-left-dec.png')}}" alt="">
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h2>We <em>Provide</em> The Best Service With <span>Our Tools</span></h2>
+            <span>Our Services</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-services">
+            <div class="item">
+              <h4>Paket Desain Custom</h4>
+              <div class="icon"><img src="{{url_for('static', filename='assets/images/service-icon-01.png')}}" alt=""></div>
+              <p>Paket desain yang terjangkau dan disesuaikan untuk meningkatkan identitas visual brand Anda di media sosial.</p>
+            </div>
+            <div class="item">
+              <h4>Manajemen Media Sosial</h4>
+              <div class="icon"><img src="{{url_for('static', filename='assets/images/service-icon-02.png')}}" alt=""></div>
+              <p>Manajemen komprehensif untuk kehadiran media sosial Anda, termasuk perencanaan posting, desain, dan analitik.</p>
+            </div>
+            <div class="item">
+              <h4>Pembuatan Identitas Brand</h4>
+              <div class="icon"><img src="{{url_for('static', filename='assets/images/service-icon-03.png')}}" alt=""></div>
+              <p>Membangun identitas brand yang kohesif dengan logo, skema warna, dan elemen visual yang mencerminkan nilai bisnis Anda.</p>
+            </div>
+            <div class="item">
+              <h4>Konten Video dan Animasi</h4>
+              <div class="icon"><img src="{{url_for('static', filename='assets/images/service-icon-04.png')}}" alt=""></div>
+              <p>Konten video pendek dan animasi yang menarik untuk memikat audiens dan mempromosikan brand Anda secara kreatif.</p>
+            </div>
+            <div class="item">
+              <h4>Konsultasi dan Pengembangan Strategi</h4>
+              <div class="icon"><img src="{{url_for('static', filename='assets/images/service-icon-01.png')}}" alt=""></div>
+              <p>Konsultasi strategis untuk membantu menyelaraskan branding visual dengan tujuan bisnis dan ekspektasi audiens Anda.</p>
+            </div>
+            <div class="item">
+              <h4>Paket Konten Bulanan</h4>
+              <div class="icon"><img src="{{url_for('static', filename='assets/images/service-icon-02.png')}}" alt=""></div>
+              <p>Paket berlangganan bulanan untuk postingan, cerita, dan reels berkualitas tinggi secara konsisten, demi kehadiran media sosial yang kuat.</p>
+            </div>
+            <div class="item">
+              <h4>Konten Visual untuk Iklan</h4>
+              <div class="icon"><img src="{{url_for('static', filename='assets/images/service-icon-03.png')}}" alt=""></div>
+              <p>Desain menarik yang secara khusus dibuat untuk meningkatkan performa iklan dan menarik perhatian audiens Anda.</p>
+            </div>
+            <div class="item">
+              <h4>Logo dan Kit Branding</h4>
+              <div class="icon"><img src="{{url_for('static', filename='assets/images/service-icon-04.png')}}" alt=""></div>
+              <p>Desain logo dan kit branding profesional untuk membangun identitas bisnis yang kuat dan mudah dikenali.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about" class="about-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="left-image">
+            <img src="{{url_for('static', filename='assets/images/about-left-image.png')}}" alt="Two Girls working together">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <h2>Grow Your Business <em>Creative Design</em> &amp; <span>Project Management</span> from DesignBisnisKita</h2>
+            <p>Tingkatkan brand Anda dengan desain kreatif dan layanan manajemen proyek dari DesignBisnisKita. Kami hadir untuk membantu UMKM menciptakan identitas visual yang kuat dan profesional agar lebih menonjol di pasar.</p>
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="fact-item">
+                  <div class="count-area-content">
+                    <div class="icon">
+                      <img src="{{url_for('static', filename='assets/images/service-icon-01.png')}}" alt="">
+                    </div>
+                    <div class="count-digit">320</div>
+                    <div class="count-title">Design Projects</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="fact-item">
+                  <div class="count-area-content">
+                    <div class="icon">
+                      <img src="{{url_for('static', filename='assets/images/service-icon-02.png')}}" alt="">
+                    </div>
+                    <div class="count-digit">640</div>
+                    <div class="count-title">Social Media Campaigns</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="fact-item">
+                  <div class="count-area-content">
+                    <div class="icon">
+                      <img src="{{url_for('static', filename='assets/images/service-icon-03.png')}}" alt="">
+                    </div>
+                    <div class="count-digit">120</div>
+                    <div class="count-title">Happy Clients</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolio" class="our-portfolio section">
+    <div class="portfolio-left-dec">
+      <img src="{{url_for('static', filename='assets/images/portfolio-left-dec.png')}}" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h2>Our Recent <em>Projects</em> &amp; Case Studies <span>for Clients</span></h2>
+            <span>Our Portfolio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="owl-carousel owl-portfolio">
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/MAKRAB.png')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a rel="sponsored" href="https://templatemo.com/tm-564-plot-listing" target="_parent"><h4>01 Project</h4></a>
+                    <span>Poster Makrab HMSI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/FTTICUP.png')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a href="#"><h4>02 Project</h4></a>
+                    <span>Poster FTTI &amp; CUP</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/oci1.jpg')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a rel="sponsored" href="https://templatemo.com/tm-562-space-dynamic" target="_parent"><h4>03 Project</h4></a>
+                    <span>Product Foto 1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/oci2.jpg')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a href="#"><h4>04 Project</h4></a>
+                    <span>Product Foto 2</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/oci3.jpg')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a href="#"><h4>05 Project</h4></a>
+                    <span>Product Foto 3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/3.png')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a href="#"><h4>06 Project</h4></a>
+                    <span>Poster Product 1</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/4.png')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a href="#"><h4>07 Project</h4></a>
+                    <span>Poster Product 2</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/5.png')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a href="#"><h4>08 Project</h4></a>
+                    <span>Poster Product 3</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/6.png')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a href="#"><h4>09 Project</h4></a>
+                    <span>Poster Tournament</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="thumb">
+                <img src="{{url_for('static', filename='assets/images/7.png')}}" alt="">
+                <div class="hover-effect">
+                  <div class="inner-content">
+                    <a href="#"><h4>10 Project</h4></a>
+                    <span>Poster Webinar</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="pricing" class="pricing-tables">
+    <div class="tables-left-dec">
+      <img src="{{url_for('static', filename='assets/images/tables-left-dec.png')}}" alt="">
+    </div>
+    <div class="tables-right-dec">
+      <img src="{{url_for('static', filename='assets/images/tables-right-dec.png')}}" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading">
+            <h2>Select a suitable <em>plan</em> for your next <span>projects</span></h2>
+            <span>Our Plans</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="item first-item">
+            <h4>Basic Package</h4>
+            <p>Start From</p>
+            <span>Rp25k/Post</span>
+            <ul>
+              <li>1 Feed Design</li>
+              <li>1 Story Design</li>
+            </ul>
+            <div class="main-blue-button-hover">
+              <a href="https://wa.me/083829563049">Get it Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="item second-item">
+            <h4>Reels Package</h4>
+            <p>Start From</p>
+            <span>Rp75k/Design</span>
+            <ul>
+              <li>Short video or animation</li>
+              <li>Includes background music</li>
+            </ul>
+            <div class="main-blue-button-hover">
+              <a href="https://wa.me/083829563049">Get it Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="item third-item">
+            <h4>Monthly Package</h4>
+            <p>Start From</p>
+            <span>Rp350k/Month</span>
+            <ul>
+              <li>4 Posts per Week</li>
+              <li>Wekly Evaluation</li>
+            </ul>
+            <div class="main-blue-button-hover">
+              <a href="https://wa.me/083829563049">Get it Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="subscribe" class="subscribe">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-content">
+            <div class="row">
+              <div class="col-lg-10 offset-lg-1">
+                <h2>Personalized Design Recommendations for Your Business</h2>
+                <form id="recommendation" action="" method="get">
+                  <input type="text" name="business_type" id="business_type" placeholder="Your Business Type (e.g., Restoran, Fashion)" required="">
+                  <input type="text" name="stylee" id="stylee" placeholder="Your Style Optional (e.g., Modern, Elegan)">
+                  <button type="submit" id="form-submit" class="main-button">Get Recommendations</button>
+                </form>                
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="video" class="our-videos section">
+    <div class="videos-left-dec">
+      <img src="{{url_for('static', filename='assets/images/videos-left-dec.png')}}" alt="">
+    </div>
+    <div class="videos-right-dec">
+      <img src="{{url_for('static', filename='assets/images/videos-right-dec.png')}}" alt="">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="naccs">
+            <div class="grid">
+              <div class="row">
+                <div class="col-lg-8">
+                  <ul class="nacc">
+                    <li class="active">
+                      <div>
+                        <div class="thumb">
+                          <img id="image-container1" src="" alt="Marketing">
+                          <div class="overlay-effect">
+                            <a href="#"><h4>Top One Recommendations</h4></a>
+                            <span>Example from freepik.com</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div class="thumb">
+                          <img id="image-container2" src="" alt="Marketing">
+                          <div class="overlay-effect">
+                            <a href="#"><h4>Top Two Recommendations</h4></a>
+                            <span>Example from freepik.com</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-4">
+                  <div class="menu">
+                    <div class="active">
+                      <div class="thumb">
+                        <img src="{{url_for('static', filename='assets/images/video-thumb-01.png')}}" alt="">
+                        <div class="inner-content">
+                          <a href="#"><h4>Top One Recommendations</h4></a>
+                         <span id="title-1"></span><br><br>
+                         <span id="description-1"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="thumb">
+                        <img src="{{url_for('static', filename='assets/images/video-thumb-02.png')}}" alt="">
+                        <div class="inner-content">
+                          <h4>Top Two Recommendations</h4>
+                         <span id="title-2"></span><br><br>
+                         <span id="description-2"></span>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div id="contact" class="contact-us section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="section-heading">
+            <h2>Feel free to <em>Contact</em> us via the <span>HTML form</spanportfolio></h2>
+            <div id="map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.967331776416!2d110.32839290843594!3d-7.793283593954112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7af7fe0351f19b%3A0xdfff0a3e88321601!2sArea%20Sawah%2C%20Banyuraden%2C%20Gamping%2C%20Sleman%20Regency%2C%20Special%20Region%20of%20Yogyakarta%2055293!5e0!3m2!1sen!2sid!4v1731621668487!5m2!1sen!2sid" width="100%" height="360px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+            </div>
+            <div class="info">
+              <span><i class="fa fa-phone"></i> <a href="#">010-020-0340<br>090-080-0760</a></span>
+              <span><i class="fa fa-envelope"></i> <a href="#">info@company.com<br>mail@company.com</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <form id="contact" action="" method="get">
+            <div class="row">
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="name" name="name" id="name" placeholder="Name" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="surname" name="surname" id="surname" placeholder="Surname" autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <input type="text" name="website" id="website" placeholder="Your Website URL" required="">
+                </fieldset>
+              </div>
+              <div class="col-lg-12">
+                <fieldset>
+                  <button type="submit" id="form-submit" class="main-button">Submit Request</button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="contact-dec">
+      <img src="{{url_for('static', filename='assets/images/contact-dec.png')}}" alt="">
+    </div>
+    <div class="contact-left-dec">
+      <img src="{{url_for('static', filename='assets/images/contact-left-dec.png')}}" alt="">
+    </div>
+  </div> -->
+
+  <div class="footer-dec">
+    <img src="{{url_for('static', filename='assets/images/footer-dec.png')}}" alt="">
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="about footer-item">
+            <div class="logo">
+              <a href="index.html" class="logo">
+                <img src="{{url_for('static', filename='assets/images/banner-right-image4.png')}}">
+              </a>
+            </div>
+
+            <a href="#">DesignBisnisKita</a>
+            <ul>
+              <li><a href="https://wa.me/083829563049"><i class="fa fa-whatsapp"></i></a></li>
+              <li><a href="https://www.instagram.com/designbisniskita/"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="mailto:contact.designbisniskita@gmail.com"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="services footer-item">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Konsultasi dan Pengembangan Strategi</a></li>
+              <li><a href="#">Manajemen Media Sosial</a></li>
+              <li><a href="#">Pembuatan Identitas Brand</a></li>
+              <li><a href="#">Konten Video dan Animasi</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="community footer-item">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Paket Desain Custom</a></li>
+              <li><a href="#">Paket Konten Bulanan</a></li>
+              <li><a href="#">Konten Visual untuk Iklan</a></li>
+              <li><a href="#">Logo dan Kit Branding</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="subscribe-newsletters footer-item">
+            <h4>Contact</h4>
+            <ul>
+              <li>
+                <a href="https://maps.app.goo.gl/m5zQVkp53QRAk4gq7">
+                  <i class="fas fa-map-marker-alt"></i> DesignBisnisKita
+                </a>
+              </li>
+              <li>
+                <a href="mailto:contact.designbisniskita@gmail.com">
+                  <i class="fas fa-envelope"></i> designbisniskita@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/083829563049">
+                  <i class="fas fa-phone-alt"></i> +62 812-3456-7890
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fas fa-clock"></i> Mon - Fri: 09:00 - 17:00
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright">
+            <p>Copyright © 2021 Onix Digital Co., Ltd. All Rights Reserved. 
+            <br>
+            Designed by <a rel="nofollow" href="https://templatemo.com" title="free CSS templates">TemplateMo</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+  <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/owl-carousel.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/animation.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/imagesloaded.js')}}"></script>
+  <script src="{{url_for('static', filename='assets/js/custom.js')}}"></script>
+
+  <script>
+      // Acc
+      $(document).on("click", ".naccs .menu div", function() {
+        var numberIndex = $(this).index();
+
+        if (!$(this).hasClass("active")) {
+          $(".naccs .menu div").removeClass("active");
+          $(".naccs ul li").removeClass("active");
+
+          $(this).addClass("active");
+          $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
+
+          var listItemHeight = $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .innerHeight();
+          $(".naccs ul").height(listItemHeight + "px");
+        }
+      });
+    // Toggle chat visibility
+    function toggleChat() {
+        const chatContainer = document.querySelector('.chat-container');
+        const chatbotIcon = document.querySelector('.chatbot-icon');
+
+        if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+            chatContainer.style.display = 'flex';
+            chatbotIcon.style.display = 'none';
+        } else {
+            chatContainer.style.display = 'none';
+            chatbotIcon.style.display = 'block';
+        }
+    }
+
+    // Handle key press (Enter key)
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+
+    // Send message function
+    function sendMessage() {
+        const messageInput = document.getElementById('messageInput');
+        const message = messageInput.value.trim();
+        
+        if (message !== '') {
+            addMessage('user', message);
+            messageInput.value = '';
+
+            // Kirim pesan ke server Flask
+            fetch('/webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                addMessage('bot', data.response);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                addMessage('bot', 'Maaf, terjadi kesalahan dalam memproses pesan Anda.');
+            });
+        }
+    }
+
+    // Add message to the chat
+    function addMessage(type, message) {
+        const messagesContainer = document.querySelector('.chat-messages');
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message');
+        messageElement.classList.add(type === 'user' ? 'user-message' : 'bot-message');
+        messageElement.textContent = message;
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    $(document).ready(function() {
+            $('#recommendation').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/get_recommendations',
+                    data: $(this).serialize(),
+                    success: function(data) {
+                        $('#title-1').text(`Judul ${data.title_1}`);
+                        $('#description-1').text(`Desain ini mengusung gaya ${data.style_1}, dengan skema warna ${data.color_scheme_1}, tipografi ${data.typography_1}, serta gaya gambar ${data.image_style_1}.`);
+                        $('#image-container1').attr('src', `${data.image_link_1}`);
+
+                        $('#title-2').text(`Judul ${data.title_2}`);
+                        $('#description-2').text(`Desain ini mengusung gaya ${data.style_2}, dengan skema warna ${data.color_scheme_2}, tipografi ${data.typography_2}, serta gaya gambar ${data.image_style_2}.`);
+                        $('#image-container2').attr('src', `${data.image_link_2}`);
+                    }
+                });
+            });
+        });
+  </script>
+</body>
+</html>

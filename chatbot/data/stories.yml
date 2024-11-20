@@ -1,0 +1,112 @@
+version: "3.1"
+
+stories:
+- story: greet path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: goodbye path
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: thank path
+  steps:
+  - intent: thank
+  - action: utter_thankyou
+
+- story: ask services path
+  steps:
+  - intent: ask_services
+  - action: utter_services
+
+- story: ask pricing path
+  steps:
+  - intent: ask_pricing
+  - action: utter_pricing
+
+- story: ask basic package path
+  steps:
+  - intent: basic_package
+  - action: utter_basic_package
+
+- story: ask reels package path
+  steps:
+  - intent: reels_package
+  - action: utter_reels_package
+
+- story: ask monthly package path
+  steps:
+  - intent: monthly_package
+  - action: utter_monthly_package
+
+- story: ask portfolio path
+  steps:
+  - intent: ask_portfolio
+  - action: utter_portfolio
+
+- story: ask process path
+  steps:
+  - intent: ask_process
+  - action: utter_process
+
+- story: ask revision policy path
+  steps:
+  - intent: ask_revision_policy
+  - action: utter_revision_policy
+
+- story: request consultation path
+  steps:
+  - intent: request_consultation
+  - action: utter_request_consultation
+
+- story: ask turnaround time path
+  steps:
+  - intent: ask_turnaround_time
+  - action: utter_turnaround_time
+
+- story: ask payment methods path
+  steps:
+  - intent: ask_payment_methods
+  - action: utter_payment_methods
+
+- story: ask contact information path
+  steps:
+  - intent: ask_contact_information
+  - action: utter_ask_contact_information
+
+- story: ask custom designs path
+  steps:
+  - intent: ask_custom_designs
+  - action: utter_ask_custom_designs
+
+- story: ask bulk order discount path
+  steps:
+  - intent: ask_bulk_order_discount
+  - action: utter_ask_bulk_order_discount
+
+- story: ask revision limits path
+  steps:
+  - intent: ask_revision_limits
+  - action: utter_ask_revision_limits
+
+- story: ask collaboration options path
+  steps:
+  - intent: ask_collaboration_options
+  - action: utter_ask_collaboration_options
+
+- story: ask refund policy path
+  steps:
+  - intent: ask_refund_policy
+  - action: utter_ask_refund_policy
+
+- story: ask delivery methods path
+  steps:
+  - intent: ask_delivery_methods
+  - action: utter_ask_delivery_methods
+
+- story: report issue path
+  steps:
+  - intent: report_issue
+  - action: utter_report_issue

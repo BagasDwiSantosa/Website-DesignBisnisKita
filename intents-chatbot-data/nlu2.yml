@@ -1,0 +1,310 @@
+# data/nlu.yml
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hai
+      - halo
+      - selamat pagi
+      - selamat siang
+      - selamat sore
+      - selamat malam
+      - hi
+      - hey
+      - permisi
+      - selamat pagi, ini tempat jasa desain, ya?
+      - apa kabar?
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - selamat tinggal
+      - sampai jumpa
+      - dadah
+      - sudah dulu
+      - ok terima kasih
+      - saya permisi dulu
+      - sampai nanti
+      - baik, nanti saya hubungi lagi
+
+  - intent: thank
+    examples: |
+      - terima kasih
+      - makasih
+      - thanks
+      - thank you
+      - thx
+      - makasih banyak
+      - terima kasih banyak
+      - terima kasih, sampai bertemu lagi
+      - terimakasih
+      - terimakasih atas infonya
+      - makasi
+
+  - intent: ask_services
+    examples: |
+      - apa saja layanan yang tersedia?
+      - apa saja layanan yang ditawarkan?
+      - layanan apa yang bisa saya dapatkan di sini?
+      - layanan apa saja yang kalian punya?
+      - bisa bikin desain apa saja?
+      - jasa desain apa saja?
+      - mau tanya layanan
+      - desain apa saja yang bisa dibuat?
+      - bisa bantu desain apa?
+      - apa yang DesignBisnisKita tawarkan?
+      - tolong jelaskan layanan
+      - layanan apa aja yang ada disini?
+      - bisa bantu bikin desain apa aja?
+      - bisa bantu bikin konten sosial media ga?
+      - bisa desain logo ga?
+
+  - intent: ask_pricing
+    examples: |
+      - berapa harganya?
+      - biaya desain berapa?
+      - harga pembuatan logo berapa?
+      - tarif jasa desain
+      - pricing
+      - biaya jasa
+      - budget yang dibutuhkan
+      - kisaran harga
+      - ada list harga paketnya?
+      - harga buat logo berapa?
+      - berapa harga jasa desain di sini?
+
+  - intent: basic_package
+    examples: |
+      - apa yang termasuk dalam paket dasar?
+      - paket dasar berisi apa saja?
+      - beri tahu tentang paket dasar
+      - saya ingin tahu tentang paket basic
+      - paket basic
+      - paket basic isinya apa aja?
+      - mau tau paket yang paling murah
+      - desain satuan bisa?
+
+  - intent: reels_package
+    examples: |
+      - apa yang dimaksud dengan paket Reels?
+      - bisa saya tahu tentang paket Reels?
+      - jelaskan paket untuk video Reels
+      - paket Reels mencakup apa?
+      - paket reels
+      - paket video
+      - bisa bikin reels?
+
+  - intent: monthly_package
+    examples: |
+      - apa yang termasuk dalam paket bulanan?
+      - jelaskan paket bulanan
+      - saya ingin tahu tentang paket social media bulanan
+      - apa keuntungan paket bulanan?
+      - paket bulanan
+      - paket monthly
+      - paket bulanan apa aja isinya?
+      - berapa harga paket bulanan?
+      - saya mau rutin bikin konten tiap bulan, pakai paket apa?
+
+  - intent: ask_portfolio
+    examples: |
+      - bisa lihat contoh desain?
+      - ada portfolio?
+      - mau lihat hasil kerja sebelumnya
+      - contoh desain yang sudah dibuat
+      - portfolio kalian dimana?
+      - bisa lihat karya sebelumnya?
+      - hasil desain sebelumnya
+      - ada contoh hasil desain?
+      - apa saja desain yang pernah dibuat?
+      - pernah bikin desain untuk siapa aja?
+      - karya kalian sebelumnya apa aja?
+
+  - intent: ask_process
+    examples: |
+      - bagaimana prosesnya?
+      - cara pemesanannya gimana?
+      - alur kerja seperti apa?
+      - proses pembuatan
+      - langkah-langkah pemesanan
+      - cara order bagaimana?
+      - prosedur pemesanan
+      - saya ingin tahu langkah-langkah desain di sini
+      - proses kerja Anda seperti apa?
+      - proses desainnya gimana sih?
+      - proses bikin desainnya ribet nggak?
+      - kalau pesan desain, langkah-langkahnya apa aja?
+
+  - intent: ask_revision_policy
+    examples: |
+      - berapa kali revisi diperbolehkan?
+      - apakah revisi dikenakan biaya tambahan?
+      - bagaimana kebijakan revisi di sini?
+      - saya ingin tahu tentang revisi desain
+      - saya ingin revisi
+      - revisi desain
+      - revisi font
+      - revisi gambar
+      - berapa kali bisa revisi?
+      - kebijakan revisi
+      - sistem revisi
+      - aturan revisi
+      - revisi maksimal berapa kali?
+      - boleh minta revisi?
+      - kalau desainnya nggak cocok, bisa revisi?
+      - berapa kali revisi yang diizinkan?
+      - revisi dikenakan biaya tambahan nggak?
+      - kebijakan revisinya gimana?
+
+  - intent: request_consultation
+    examples: |
+      - saya mau konsultasi
+      - bisa konsultasi dimana?
+      - mau tanya-tanya dulu
+      - cara hubungi tim
+      - ingin diskusi project
+      - bagaimana cara konsultasi?
+      - mau discuss project
+      - saya ingin konsultasi
+      - bisakah saya berdiskusi?
+      - saya ingin berbicara langsung
+      - bagaimana cara konsultasi tentang desain saya?
+      - bisa konsultasi dulu sebelum pesan?
+      - saya mau diskusi tentang kebutuhan desain saya
+      - ada yang bisa saya ajak bicara soal desain?
+      - konsultasinya bayar atau gratis?
+
+  - intent: ask_turnaround_time
+    examples: |
+      - berapa lama prosesnya?
+      - waktu pengerjaan
+      - estimasi selesai
+      - butuh waktu berapa lama?
+      - kapan selesainya?
+      - durasi pengerjaan
+      - timeline project
+      - berapa lama waktu pengerjaan desain?
+      - kapan desain saya akan selesai?
+      - apa estimasi waktu penyelesaian untuk layanan ini?
+      - tolong beri tahu saya jadwal pengerjaan
+      - berapa lama desainnya jadi?
+      - waktu pengerjaan kira-kira berapa hari?
+      - cepet nggak pengerjaannya?
+      - kalau pesan sekarang, kapan jadi?
+
+  - intent: ask_payment_methods
+    examples: |
+      - cara pembayarannya?
+      - metode pembayaran apa saja?
+      - bisa bayar pakai apa?
+      - pembayaran via apa?
+      - sistem pembayaran
+      - bisa bayar transfer?
+      - bagaimana metode pembayaran di sini?
+      - bisa saya bayar melalui transfer bank?
+      - apa saja cara pembayaran yang diterima?
+      - saya ingin tahu tentang pembayaran
+      - bayarnya bisa lewat apa aja?
+      - bisa bayar lewat transfer bank?
+      - ada opsi COD nggak?
+
+  - intent: affirm
+    examples: |
+      - ya
+      - iya
+      - betul
+      - ok
+      - oke
+      - siap
+      - baik
+      - bisa
+
+  - intent: deny
+    examples: |
+      - tidak
+      - nggak
+      - gak
+      - bukan
+      - belum
+      - nanti dulu
+      - tidak dulu
+
+  - intent: ask_contact_information
+    examples: |
+      - bagaimana cara menghubungi tim Anda?
+      - ada nomor telepon atau email yang bisa dihubungi?
+      - bisa beri kontak Anda?
+      - saya butuh informasi kontak
+      - dimana saya bisa menghubungi
+      - apakah ada ig?
+      - apakah ada nomor whatsapp
+      - bisa minta nomor kontaknya?
+      - email kalian apa?
+      - gimana cara hubungi tim kalian?
+      - ada WhatsApp buat konsultasi?
+
+  - intent: ask_custom_designs
+    examples: |
+      - apakah Anda bisa membuat desain khusus?
+      - bisakah desain disesuaikan dengan kebutuhan saya?
+      - saya ingin desain yang unik, apakah mungkin?
+      - ada opsi custom untuk desain?
+      - bisa custom desain?
+      - bisa request desain?
+      - bisa bikin desain sesuai request?
+      - saya mau desain yang custom, bisa nggak?
+      - bisa menyesuaikan desain dengan bisnis saya?
+
+  - intent: ask_bulk_order_discount
+    examples: |
+      - apakah ada diskon untuk pemesanan dalam jumlah besar?
+      - berapa harga jika saya memesan banyak desain?
+      - ada potongan harga untuk banyak pesanan?
+      - tolong beri tahu tentang diskon untuk bulk order
+      - ada diskon?
+      - bisa ditawar?
+      - kalau pesan banyak, dapat diskon nggak?
+      - harga grosir desain gimana?
+      - ada potongan harga buat pesanan besar?
+
+  - intent: ask_revision_limits
+    examples: |
+      - berapa revisi yang diperbolehkan dalam satu proyek?
+      - revisi desain maksimal berapa kali?
+      - apa batas revisi untuk setiap paket?
+      - saya ingin tahu kebijakan revisi 
+      - aturan revisi apa saja?
+      - apakah bisa revisi?
+      - berapa kali revisi?
+
+  - intent: ask_collaboration_options
+    examples: |
+      - apakah Anda terbuka untuk kerja sama jangka panjang?
+      - bisa kita bekerja sama untuk proyek desain?
+      - saya ingin mendiskusikan kemitraan
+      - bagaimana kerja sama desain dengan tim Anda?
+      - bisa jadi partner?
+      - bisa jadi mitra?
+
+  - intent: ask_refund_policy
+    examples: |
+      - apakah ada kebijakan pengembalian dana?
+      - jika saya tidak puas, apa yang harus dilakukan?
+      - bagaimana proses refund jika saya membatalkan?
+      - saya ingin tahu tentang pengembalian dana
+
+  - intent: ask_delivery_methods
+    examples: |
+      - bagaimana desain akan dikirimkan?
+      - apakah file desain dikirim via email?
+      - apa format file yang dikirimkan?
+      - saya ingin tahu cara pengiriman desain
+
+  - intent: report_issue
+    examples: |
+      - saya menghadapi masalah dengan desain saya
+      - layanan Anda tidak berjalan sesuai harapan
+      - saya ingin melaporkan masalah
+      - ada masalah dengan pesanan saya

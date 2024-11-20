@@ -1,0 +1,95 @@
+# domain.yml
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - thank
+  - ask_services
+  - ask_pricing
+  - basic_package
+  - reels_package
+  - monthly_package
+  - ask_portfolio
+  - ask_process
+  - ask_revision_policy
+  - request_consultation
+  - ask_turnaround_time
+  - ask_payment_methods
+  - affirm
+  - deny
+  - ask_contact_information
+  - ask_custom_designs
+  - ask_bulk_order_discount
+  - ask_revision_limits
+  - ask_collaboration_options
+  - ask_refund_policy
+  - ask_delivery_methods
+  - report_issue
+
+responses:
+  utter_greet:
+    - text: "Halo! Selamat datang di DesignBisnisKita. Saya siap membantu Anda dengan kebutuhan desain untuk bisnis Anda. Ada yang bisa saya bantu?"
+
+  utter_goodbye:
+    - text: "Terima kasih telah menghubungi DesignBisnisKita. Semoga harimu menyenangkan!"
+
+  utter_thankyou:
+    - text: "Sama-sama! Senang bisa membantu Anda. Ada yang bisa kami bantu lagi?"
+
+  utter_services:
+    - text: "Kami menyediakan berbagai layanan desain seperti:\n- Logo & Brand Identity\n- Kemasan Produk\n- Feed Instagram\n- Banner & Poster\n- Kartu Nama\n- Brosur\ndll."
+
+  utter_pricing:
+    - text: " Kami menawarkan tiga paket desain yang dapat disesuaikan dengan kebutuhan Bisnis Anda. \n- Paket Basic dengan harga mulai dari Rp25.000 per post, mencakup 1 desain feed dan 1 desain story untuk sosial media.\n- Paket Reels mulai dari Rp75.000 per desain, yang menawarkan video pendek atau animasi untuk konten Reels di media sosial. \n- Paket Bulanan dengan harga mulai dari Rp350.000 per bulan, yang mencakup 4 post per minggu beserta evaluasi mingguan. \ Setiap paket dirancang untuk membantu Anda mencapai tujuan pemasaran dengan desain yang sesuai dengan kebutuhan bisnis Anda."
+
+  utter_basic_package:
+    - text: "Paket Basic harga mulai dari Rp25.000 per post. Sudah termasuk desain 1 feed + 1 story untuk sosial media Anda."
+ 
+  utter_reels_package:
+    - text: "Paket Reels harga mulai dari Rp75.000 per desain. Paket ini mencakup desain video pendek atau animasi untuk konten Reels."
+
+  utter_monthly_package:
+    - text: "Paket Bulanan kami mulai dari Rp350.000 per bulan. Dapatkan 4 post setiap minggu, ditambah evaluasi mingguan."
+
+  utter_portfolio:
+    - text: "Anda bisa melihat portfolio kami di:\n- Website: www.designbisniskita.com/portfolio\n- Instagram: @designbisniskita"
+
+  utter_process:
+    - text: "Proses pengerjaan desain kami:\n1. Konsultasi & Brief\n2. Penawaran harga\n3. Pembayaran DP (50%)\n4. Pengerjaan desain (3-5 hari)\n5. Revisi (maksimal 3x)\n6. Pelunasan\n7. File final dikirim"
+
+  utter_revision_policy:
+    - text: "Kebijakan revisi kami:\n- Maksimal 3x revisi untuk setiap desain\n- Revisi minor (warna, font, ukuran) gratis\n- Revisi major (konsep baru) dikenakan biaya tambahan"
+
+  utter_request_consultation:
+    - text: "Senang Anda tertarik untuk konsultasi! Silakan hubungi WhatsApp kami di +62 838-2956-3049"
+
+  utter_turnaround_time:
+    - text: "Waktu pengerjaan kami:\n- Desain: 3-5 hari kerja\n- Feed Instagram: 5-7 hari kerja\n- Paket Bulanan: Berdasarkan jadwal\nWaktu bisa menyesuaikan kompleksitas proyek"
+
+  utter_payment_methods:
+    - text: "Metode pembayaran:\n- Transfer Bank (BCA, Mandiri, BNI)\n- E-wallet (GoPay, OVO, DANA)"
+
+  utter_ask_contact_information:
+    - text: "Anda dapat menghubungi kami melalui instagram di @designbisniskita atau WhatsApp di +62 838-2956-3049."
+    
+  utter_ask_custom_designs:
+    - text: "Tentu saja! Kami dapat membuat desain sesuai kebutuhan Anda. Silakan sampaikan detailnya melalui instagram di @designbisniskita atau WhatsApp di +62 838-2956-3049."
+    
+  utter_ask_bulk_order_discount:
+    - text: "Kami menyediakan diskon untuk pesanan besar. Silakan hubungi kami untuk diskusi lebih lanjut."
+    
+  utter_ask_revision_limits:
+    - text: "Anda bisa mengajukan revisi:\n- Maksimal 3x revisi untuk setiap desain\n- Revisi minor (warna, font, ukuran) gratis\n- Revisi major (konsep baru) dikenakan biaya tambahan"
+    
+  utter_ask_collaboration_options:
+    - text: "Kami menerima kolaborasi jangka panjang. Silakan  hubungi kami untuk detail lebih lanjut melalui instagram di @designbisniskita atau WhatsApp di +62 838-2956-3049."
+    
+  utter_ask_refund_policy:
+    - text: "Kami memiliki kebijakan refund jika terjadi kesalahan besar dalam hasil desain. Silakan hubungi kami untuk proses lebih lanjut melalui instagram di @designbisniskita atau WhatsApp di +62 838-2956-3049."
+    
+  utter_ask_delivery_methods:
+    - text: "Hasil desain akan dikirimkan melalui WhatsApps atau email dalam format digital (JPEG/PNG/PSD sesuai permintaan)."
+    
+  utter_report_issue:
+    - text: "Kami minta maaf atas ketidaknyamanan ini. Silakan hubungi kami dengan detail masalah melalui instagram di @designbisniskita atau WhatsApp di +62 838-2956-3049, dan kami akan segera menanganinya."

@@ -1,0 +1,272 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Design Recommendation System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <!-- Form Section -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h1 class="text-2xl font-bold mb-4">AI Design Recommendation System</h1>
+                <form id="recommendationForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Jenis Bisnis</label>
+                        <select id="business_type" name="business_type" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            <option value="restaurant">Restaurant</option>
+                            <option value="cafe">Cafe</option>
+                            <option value="fashion">Fashion</option>
+                            <option value="technology">Technology</option>
+                            <option value="education">Education</option>
+                            <option value="healthcare">Healthcare</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Style Preferences</label>
+                        <div class="grid grid-cols-3 gap-2 mt-2">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="style" value="modern" class="form-checkbox">
+                                <span class="ml-2">Modern</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="style" value="minimal" class="form-checkbox">
+                                <span class="ml-2">Minimal</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="style" value="elegant" class="form-checkbox">
+                                <span class="ml-2">Elegant</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="style" value="bold" class="form-checkbox">
+                                <span class="ml-2">Bold</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="style" value="creative" class="form-checkbox">
+                                <span class="ml-2">Creative</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="style" value="professional" class="form-checkbox">
+                                <span class="ml-2">Professional</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Required Features</label>
+                        <div class="grid grid-cols-2 gap-2 mt-2">
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="features" value="gallery" class="form-checkbox">
+                                <span class="ml-2">Gallery</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="features" value="booking" class="form-checkbox">
+                                <span class="ml-2">Booking System</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="features" value="social" class="form-checkbox">
+                                <span class="ml-2">Social Media</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="checkbox" name="features" value="contact" class="form-checkbox">
+                                <span class="ml-2">Contact Form</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" 
+                            class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Get AI Recommendations
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Section -->
+            <div id="recommendations" class="hidden">
+                <h2 class="text-2xl font-bold mb-6">Recommended Designs</h2>
+                <div id="recommendationCards" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Cards will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#recommendationForm').on('submit', function(e) {
+                e.preventDefault();
+                
+                // Collect form data
+                const businessType = $('#business_type').val();
+                const style = $('input[name="style"]:checked').map(function() {
+                    return $(this).val();
+                }).get();
+                const features = $('input[name="features"]:checked').map(function() {
+                    return $(this).val();
+                }).get().join(', ');
+                
+                const data = {
+                    business_type: businessType,
+                    style: style,
+                    features: features
+                };
+                
+                $.ajax({
+                    url: '/get_recommendations',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function(response) {
+                        $('#errorMessage').addClass('hidden');
+                        
+                        if (response.success) {
+                            $('#recommendations').removeClass('hidden');
+                            $('#recommendationCards').empty();
+                            
+                            response.recommendations.forEach(function(rec) {
+                                const card = `
+                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <div class="p-6">
+                                            <h3 class="font-bold text-xl mb-2">${rec.title}</h3>
+                                            <div class="mb-4">
+                                                <span class="text-sm font-semibold text-gray-600">Color Scheme:</span>
+                                                <span class="ml-2">${rec.color_scheme}</span>
+                                            </div>
+                                            <div class="mb-4">
+                                                <!-- Melanjutkan script section dari templates/index.html -->
+                                <div class="mb-4">
+                                    <span class="text-sm font-semibold text-gray-600">Typography:</span>
+                                    <span class="ml-2">${rec.typography}</span>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="text-sm font-semibold text-gray-600">Image Style:</span>
+                                    <span class="ml-2">${rec.image_style}</span>
+                                </div>
+                                <div class="mb-4">
+                                    <span class="text-sm font-semibold text-gray-600">Style:</span>
+                                    <span class="ml-2">${rec.style.join(', ')}</span>
+                                </div>
+                                <div class="mt-4 space-y-2">
+                                    <h4 class="font-semibold text-gray-700">Key Features:</h4>
+                                    <ul class="list-disc pl-5 space-y-1">
+                                        ${rec.features.split(',').map(feature => `
+                                            <li class="text-gray-600">${feature.trim()}</li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                                <div class="mt-6">
+                                    <button onclick="previewDesign(${rec.design_id})" 
+                                            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mr-2">
+                                        Preview
+                                    </button>
+                                    <button onclick="saveDesign(${rec.design_id})" 
+                                            class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    $('#recommendationCards').append(card);
+                });
+                
+                // Scroll to recommendations
+                $('html, body').animate({
+                    scrollTop: $("#recommendations").offset().top
+                }, 1000);
+            } else {
+                $('#recommendations').addClass('hidden');
+                $('#errorMessage').removeClass('hidden').text(response.error);
+            }
+        },
+        error: function() {
+            $('#errorMessage').removeClass('hidden')
+                .text('An error occurred while getting recommendations. Please try again.');
+        }
+    });
+});
+
+// Preview design function
+function previewDesign(designId) {
+    // Create modal for preview
+    const modal = `
+        <div id="previewModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+            <div class="bg-white rounded-lg max-w-4xl w-full mx-4 p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">Design Preview</h3>
+                    <button onclick="closePreview()" class="text-gray-500 hover:text-gray-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="preview-content">
+                    <!-- Preview content will be loaded here -->
+                    <div class="animate-pulse">
+                        <div class="h-64 bg-gray-200 rounded mb-4"></div>
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                        <div class="h-4 bg-gray-200 rounded w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    $('body').append(modal);
+    
+    // Load preview content
+    $.ajax({
+        url: `/preview_design/${designId}`,
+        method: 'GET',
+        success: function(response) {
+            $('.preview-content').html(response.preview_html);
+        },
+        error: function() {
+            $('.preview-content').html('<p class="text-red-500">Error loading preview</p>');
+        }
+    });
+}
+
+// Close preview modal
+function closePreview() {
+    $('#previewModal').remove();
+}
+
+// Save design function
+function saveDesign(designId) {
+    $.ajax({
+        url: '/save_design',
+        method: 'POST',
+        data: JSON.stringify({ design_id: designId }),
+        contentType: 'application/json',
+        success: function(response) {
+            if (response.success) {
+                alert('Design saved successfully!');
+            } else {
+                alert('Error saving design: ' + response.error);
+            }
+        },
+        error: function() {
+            alert('Error saving design. Please try again.');
+        }
+    });
+}
+
+// Add loading indicator
+$(document).on('submit', 'form', function() {
+    const button = $(this).find('button[type="submit"]');
+    button.prop('disabled', true)
+          .html('<span class="inline-flex items-center"><svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Processing...</span>');
+});
+</script>
+</body>
+</html>
