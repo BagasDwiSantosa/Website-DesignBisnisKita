@@ -40,9 +40,9 @@ Sistem rekomendasi ini dirancang untuk memberikan wawasan kepada pelanggan menge
 
 ## 💲 Harga  
 Berikut daftar harga layanan kami:  
-- **Basic Package**: Rp200.000/posting.  
-- **Reels Package**: Rp500.000/video.  
-- **Monthly Package**: Rp2.000.000 (10 desain).  
+- **Basic Package**: Rp25.000/desain.  
+- **Reels Package**: Rp75.000/video.  
+- **Monthly Package**: Rp350.000/16 post.  
 
 ---
 
@@ -51,7 +51,8 @@ Kami telah membantu berbagai UMKM di sektor:
 - Kuliner.  
 - Fashion.  
 - Jasa layanan.  
-- E-commerce.  
+- E-commerce.
+- dll.
 
 Lihat lebih banyak di halaman **Portofolio** kami!  
 
@@ -67,6 +68,6 @@ Lihat lebih banyak di halaman **Portofolio** kami!
 
 ## 📞 Hubungi Kami  
 Untuk informasi lebih lanjut, silakan kunjungi website kami atau hubungi kami melalui:  
-- Email: support@designbisniskita.com  
+- Email: designbisniskita@gmail.com  
 - Instagram: [@designbisniskita](https://instagram.com/designbisniskita)  
 
